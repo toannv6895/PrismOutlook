@@ -94,12 +94,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Infragistics.WPF.OutlookBar">
+      <Version>20.1.26</Version>
+    </PackageReference>
+    <PackageReference Include="Infragistics.WPF.Ribbon">
+      <Version>20.1.26</Version>
+    </PackageReference>
     <PackageReference Include="Prism.Unity" Version="7.2.0.1422" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modules\PrismOutlook.Modules.Mail\PrismOutlook.Modules.Mail.csproj">
       <Project>{B9D5BAB2-6807-4C0F-A459-06FDDF304CF5}</Project>
       <Name>PrismOutlook.Modules.Mail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PrismOutlook.Core\PrismOutlook.Core.csproj">
+      <Project>{ccba47c7-ec5c-4ae8-9da8-4f5b865a61ea}</Project>
+      <Name>PrismOutlook.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

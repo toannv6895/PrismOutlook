@@ -1,10 +1,22 @@
-﻿<Window x:Class="PrismOutlook.Views.MainWindow"
+﻿<ig:XamRibbonWindow x:Class="PrismOutlook.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:ig="http://schemas.infragistics.com/xaml/wpf"
+                    xmlns:Core="clr-namespace:PrismOutlook.Core;assembly=PrismOutlook.Core"
         Title="{Binding Title}" Height="350" Width="525">
-    <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
-    </Grid>
-</Window>
+    <ig:RibbonWindowContentHost>
+        <ig:RibbonWindowContentHost.Ribbon>
+            <ig:XamRibbon>
+                
+            </ig:XamRibbon>
+        </ig:RibbonWindowContentHost.Ribbon>
+
+        <DockPanel LastChildFill="True">
+            <ig:XamOutlookBar DockPanel.Dock="Left" Width="200"/>
+            <ContentControl prism:RegionManager.RegionName="{x:Static Core:RegionNames.ContentRegion}"/>
+        </DockPanel>
+        
+    </ig:RibbonWindowContentHost>
+</ig:XamRibbonWindow>
