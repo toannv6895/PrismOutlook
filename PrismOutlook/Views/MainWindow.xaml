@@ -8,13 +8,13 @@
         Title="{Binding Title}" Height="350" Width="525">
     <ig:RibbonWindowContentHost>
         <ig:RibbonWindowContentHost.Ribbon>
-            <ig:XamRibbon>
+            <ig:XamRibbon prism:RegionManager.RegionName="{x:Static Core:RegionNames.RibbonRegion}">
                 
             </ig:XamRibbon>
         </ig:RibbonWindowContentHost.Ribbon>
 
         <DockPanel LastChildFill="True">
-            <ig:XamOutlookBar DockPanel.Dock="Left" Width="200"/>
+            <ig:XamOutlookBar prism:RegionManager.RegionName="{x:Static Core:RegionNames.OutlookGroupRegion}" DockPanel.Dock="Left" Width="200"/>
             <ContentControl prism:RegionManager.RegionName="{x:Static Core:RegionNames.ContentRegion}"/>
         </DockPanel>
         
