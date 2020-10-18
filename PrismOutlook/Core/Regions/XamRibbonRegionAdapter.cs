@@ -13,7 +13,7 @@ namespace PrismOutlook.Core.Regions
 {
     public class XamRibbonRegionAdapter : RegionAdapterBase<XamRibbon>
     {
-        public XamRibbonRegionAdapter(RegionBehaviorFactory behaviorFactory)
+        public XamRibbonRegionAdapter(IRegionBehaviorFactory behaviorFactory)
             : base(behaviorFactory)
         {
 
@@ -22,7 +22,7 @@ namespace PrismOutlook.Core.Regions
         protected override void Adapt(IRegion region, XamRibbon regionTarget)
         {
             if (region == null) throw new ArgumentNullException(nameof(region));
-            if (region == null) throw new ArgumentNullException(nameof(regionTarget));
+            if (regionTarget == null) throw new ArgumentNullException(nameof(regionTarget));
 
             region.Views.CollectionChanged += (s, e) =>
             {
@@ -32,12 +32,13 @@ namespace PrismOutlook.Core.Regions
                     {
                         AddViewToRegion(view, regionTarget);
                     }
+
                 }
                 else if (e.Action == NotifyCollectionChangedAction.Remove)
                 {
                     foreach (var view in e.OldItems)
                     {
-                        RemoveViewToRegion(view, regionTarget);
+                        RemoveViewFromRegion(view, regionTarget);
                     }
                 }
             };
@@ -56,7 +57,7 @@ namespace PrismOutlook.Core.Regions
             }
         }
 
-        static void RemoveViewToRegion(object view, XamRibbon xamRibbon)
+        static void RemoveViewFromRegion(object view, XamRibbon xamRibbon)
         {
             if (view is RibbonTabItem ribbonTabItem)
             {

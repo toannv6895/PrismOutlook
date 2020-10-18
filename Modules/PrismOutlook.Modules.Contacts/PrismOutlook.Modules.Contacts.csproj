@@ -48,9 +48,11 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Include="ContactsModule.cs" />
+    <Compile Include="Menus\ContactsGroup.xaml.cs">
+      <DependentUpon>ContactsGroup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -78,18 +80,30 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
-
   <ItemGroup>
+    <ProjectReference Include="..\..\PrismOutlook.Core\PrismOutlook.Core.csproj">
+      <Project>{CCBA47C7-EC5C-4AE8-9DA8-4F5B865A61EA}</Project>
+      <Name>PrismOutlook.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Menus\ContactsGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ViewA.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-
   <ItemGroup>
+    <PackageReference Include="Infragistics.WPF.OutlookBar">
+      <Version>20.1.26</Version>
+    </PackageReference>
+    <PackageReference Include="Infragistics.WPF.Ribbon">
+      <Version>20.1.26</Version>
+    </PackageReference>
     <PackageReference Include="Prism.Wpf" Version="7.2.0.1422" />
   </ItemGroup>
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

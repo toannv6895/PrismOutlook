@@ -108,6 +108,10 @@
     <PackageReference Include="Prism.Unity" Version="7.2.0.1422" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Modules\PrismOutlook.Modules.Contacts\PrismOutlook.Modules.Contacts.csproj">
+      <Project>{1391AEB3-2B19-4320-9063-EBDF60CA1D0D}</Project>
+      <Name>PrismOutlook.Modules.Contacts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modules\PrismOutlook.Modules.Mail\PrismOutlook.Modules.Mail.csproj">
       <Project>{B9D5BAB2-6807-4C0F-A459-06FDDF304CF5}</Project>
       <Name>PrismOutlook.Modules.Mail</Name>

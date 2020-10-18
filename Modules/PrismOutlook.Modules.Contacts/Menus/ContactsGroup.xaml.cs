@@ -1,4 +1,4 @@
-﻿using Infragistics.Windows.Ribbon;
+﻿using Infragistics.Windows.OutlookBar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +14,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PrismOutlook.Modules.Mail.Menus
+namespace PrismOutlook.Modules.Contacts.Menus
 {
     /// <summary>
-    /// Interaction logic for HomeTab.xaml
+    /// Interaction logic for ContactsGroup.xaml
     /// </summary>
-    public partial class HomeTab : RibbonTabItem
+    public partial class ContactsGroup : OutlookBarGroup
     {
-        public HomeTab()
+        public ContactsGroup()
         {
             InitializeComponent();
         }

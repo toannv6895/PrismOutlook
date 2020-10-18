@@ -12,7 +12,7 @@ namespace PrismOutlook.Core.Regions
 {
     public class XamOutlookBarRegionAdapter : RegionAdapterBase<XamOutlookBar>
     {
-        public XamOutlookBarRegionAdapter(RegionBehaviorFactory behaviorFactory)
+        public XamOutlookBarRegionAdapter(IRegionBehaviorFactory behaviorFactory)
             : base(behaviorFactory)
         {
 

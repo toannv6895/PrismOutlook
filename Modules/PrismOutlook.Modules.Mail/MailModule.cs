@@ -3,6 +3,7 @@ using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
 using PrismOutlook.Core;
+using PrismOutlook.Modules.Mail.Menus;
 
 namespace PrismOutlook.Modules.Mail
 {
@@ -17,6 +18,8 @@ namespace PrismOutlook.Modules.Mail
         public void OnInitialized(IContainerProvider containerProvider)
         {
             _regionManager.RegisterViewWithRegion(RegionNames.ContentRegion, typeof(ViewA));
+            _regionManager.RegisterViewWithRegion(RegionNames.RibbonRegion, typeof(HomeTab));
+            _regionManager.RegisterViewWithRegion(RegionNames.OutlookGroupRegion, typeof(MailGroup));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
